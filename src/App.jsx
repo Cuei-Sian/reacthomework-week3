@@ -191,10 +191,9 @@ function App() {
 
   //串接API
   const onSubmit = async (e) => {
+    e.preventDefault(); //停止onSubmit的預設事件，為避免原生的預設事件發生
     try {
       //登入成功
-      e.preventDefault(); //停止onSubmit的預設事件，為避免原生的預設事件發生
-      //串接API
       const response = await axios.post(`${API_BASE}/admin/signin`, formData);
       // console.log(response.data);
       // 設定cookie
